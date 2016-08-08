@@ -1,0 +1,79 @@
+{
+	"name": "snie",
+	"children": [
+		{
+			"name": "home"
+		},
+
+		{
+			"name": "projects",
+			"children": [
+				{
+					"name": "vis leetcode"
+				},
+
+				{
+					"name": "vis deepnet"
+				}
+			]
+		},
+
+		{
+			"name": "poetry",
+			"children": [
+				{
+					"name": "镜中",
+					"src": "jing-zhong.html"
+				},
+
+				{
+					"name": "当你老了",
+					"src": "when-you-are-old.html"
+
+				},
+
+				{
+					"name": "亚当的诅咒",
+					"src": "the-curse-of-adam.html"
+				}
+			]
+		},
+
+		{
+			"name": "writing",
+			"children": [
+				{
+					"name": "language"
+				},
+
+				{
+					"name": "thoughts"
+				},
+
+				{
+					"name": "language"
+				},
+
+				{
+					"name": "thoughts"
+				},
+
+				{
+					"name": "language"
+				},
+
+				{
+					"name": "thoughts"
+				},
+
+				{
+					"name": "language"
+				},
+
+				{
+					"name": "thoughts"
+				}
+			]
+		}
+	]
+}

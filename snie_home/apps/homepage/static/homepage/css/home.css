@@ -1,0 +1,62 @@
+body {
+	background-color: khaki;
+}
+
+/* svg and group*/
+svg {
+	float: left;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  stroke-width: 5px;
+}
+
+.node text {
+  font: 15px sans-serif;
+  font-weight: bolder;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2.5px;
+}
+
+
+/* back buttom */
+#back-buttom {
+    cursor: pointer;
+}
+
+#back-buttom circle{
+    stroke-width: 5px;
+    fill: white;
+}
+
+#back-buttom text {
+  font: 15px sans-serif;
+  font-weight: bolder;
+  color: black;
+}
+
+
+/* content container */
+iframe {
+    display: none;
+    border: none;
+    overflow: visible;
+}
+
+
+
+
+
+
+
+
+
+

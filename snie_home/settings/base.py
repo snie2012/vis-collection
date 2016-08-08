@@ -54,8 +54,7 @@ INSTALLED_APPS += (
 # User defined apps
 INSTALLED_APPS += (
     # Installed apps
-    #'blog.apps.taskmanager'
-    #'blog.apps.oauth2_authentication',
+    'snie_home.apps.homepage',
 )
 
 
@@ -160,8 +159,7 @@ STATIC_URL = '/static/'
 
 # Look for static files are used for the whole project and shouldn’t be inside a specific app
 STATICFILES_DIRS = (
-    # os.path.join(BASE_DIR, 'static'), 
-
+    os.path.join(BASE_DIR, 'static'),
     # Path to shared js and css libs
     # os.path.join(BASE_DIR, 'common/common/js'),
     # os.path.join(BASE_DIR, 'common/common/css')

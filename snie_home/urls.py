@@ -15,15 +15,19 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from .views import home
+from django.conf.urls.i18n import i18n_patterns
+from .views import home, home_files
 
 urlpatterns = [
-    # Url for admin
-    url(r'^admin/', admin.site.urls),
-
-    # Url for the whole app entrance
-    url(r'^$', home, name='home'),
-
-    # Url for individual apps
-    #url(r'^homepage/', include('juan_homepage.apps.homepage.urls', namespace="homepage")),
+    url(r'^(?P<filename>(robots.txt)|(humans.txt))$', 
+            home_files, name='home-files'),
+    # url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
+    # url(r'^accounts/', include('allauth.urls')),
+    url(r'i18n/', include('django.conf.urls.i18n')),
 ]
+
+urlpatterns += i18n_patterns(
+    url(r'^$', home, name='home'),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^homepage/', include('snie_home.apps.homepage.urls', namespace="homepage"))
+)
