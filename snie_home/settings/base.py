@@ -80,9 +80,16 @@ MIDDLEWARE_CLASSES = (
 # Configure database
 # import dj_database_url
 # DATABASES = {}
-# DATABASES['default'] =  dj_database_url.config()
-# DATABASES['default']['ENGINE'] = 'django_postgrespool'
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+import dj_database_url
+DATABASES = {}
+DATABASES['default'] =  dj_database_url.config()
+DATABASES['default']['ENGINE'] = 'django_postgrespool'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 
 # Configue allauth
