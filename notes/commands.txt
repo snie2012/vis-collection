@@ -1,0 +1,17 @@
+# Common commands for heroku
+
+heroku addons:add heroku-postgresql:dev
+
+heroku config | grep HEROKU_POSTGRESQL
+
+heroku pg:promote HEROKU_POSTGRESQL_AMBER_URL
+
+heroku pg:psql
+
+heroku pg:pull myapponheroku::YELLOW mylocaldb
+
+heroku pg:push mylocaldb HEROKU_POSTGRESQL_AMBER –app myapponheroku
+
+heroku pg:reset HEROKU_POSTGRESQL_YELLOW
+
+heroku run python manage.py syncdb

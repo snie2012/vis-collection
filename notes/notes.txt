@@ -1,0 +1,19 @@
+Steps to set up a django project:
+
+Database setting:
+1. Create a postgres database to be used. (createdb)
+
+Virtualenv setting:
+2. Create a virtaulenv with a certain python version.
+3. Set up the virtalenv environment variables for the path of setting file, the name of the database and secret key. (These variables has to be reset in the deployment environemt if deployed.)
+
+Follow test-driven development:
+4. Create another virtualenv for testing. Use a separate database.
+
+Pip install packages:
+5. Use pip to install key packages: Django, dj-database-url, dj-static, django-allauth, gunicorn, django-toolbelt,, django-postgrespool. Missing packages can be installed according to the error message.
+6. Every time a new package is installed or an existing package is updated, rewrite the updated information to requirement.txt.
+
+For heroku deployment:
+7. Add a Procfile (specify web server), runtime.txt(specify python version).
+
