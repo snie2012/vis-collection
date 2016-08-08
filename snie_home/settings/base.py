@@ -78,8 +78,7 @@ MIDDLEWARE_CLASSES = (
 
 
 # Configure database
-import dj_database_url
-
+# import dj_database_url
 # DATABASES = {}
 # DATABASES['default'] =  dj_database_url.config()
 # DATABASES['default']['ENGINE'] = 'django_postgrespool'
@@ -162,9 +161,9 @@ STATIC_URL = '/static/'
 # Look for static files are used for the whole project and shouldn’t be inside a specific app
 STATICFILES_DIRS = (
     # Path to blog static file
-    os.path.join(BASE_DIR, 'static'), 
+    # os.path.join(BASE_DIR, 'static'), 
 
     # Path to shared js and css libs
-    os.path.join(BASE_DIR, 'common/common/js'),
-    os.path.join(BASE_DIR, 'common/common/css')
+    # os.path.join(BASE_DIR, 'common/common/js'),
+    # os.path.join(BASE_DIR, 'common/common/css')
 )

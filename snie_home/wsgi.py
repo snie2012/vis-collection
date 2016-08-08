@@ -14,6 +14,6 @@ from django.core.wsgi import get_wsgi_application
 # dj_static: This is a simple Django middleware utility that allows you to properly serve static assets from production with a WSGI server like Gunicorn.
 from dj_static import Cling
 
-# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "juan_homepage.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "snie_home.settings")
 
 application = Cling(get_wsgi_application())
