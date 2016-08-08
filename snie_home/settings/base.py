@@ -12,7 +12,6 @@ def get_env_variable(var_name):
  
 SECRET_KEY = get_env_variable('SECRET_KEY')
 
-
 # Config the base path to look for static and template files
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -78,12 +77,6 @@ MIDDLEWARE_CLASSES = (
 
 
 # Configure database
-# import dj_database_url
-# DATABASES = {}
-# db_from_env = dj_database_url.config()
-# DATABASES['default'].update(db_from_env)
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 import dj_database_url
 DATABASES = {}
 DATABASES['default'] =  dj_database_url.config()
@@ -167,7 +160,6 @@ STATIC_URL = '/static/'
 
 # Look for static files are used for the whole project and shouldn’t be inside a specific app
 STATICFILES_DIRS = (
-    # Path to blog static file
     # os.path.join(BASE_DIR, 'static'), 
 
     # Path to shared js and css libs
