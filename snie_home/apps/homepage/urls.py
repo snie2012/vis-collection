@@ -26,6 +26,6 @@ def build(node):
         for c in node['children']:
             build(c)
 
-with open(dataPath, 'r') as f:
-    root = json.load(f)
+with open(dataPath, 'r', encoding='utf-8') as f:
+    root = json.load(f, encoding='utf-8')
     build(root)

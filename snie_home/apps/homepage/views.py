@@ -13,8 +13,8 @@ def homepage(request):
 
 @csrf_protect
 def jsonFile(request):
-    with open(dataPath, 'r') as f:
-        data = json.load(f)
+    with open(dataPath, 'r', encoding='utf-8') as f:
+        data = json.load(f, encoding='utf-8')
     return JsonResponse(data, safe=False)
 
 
