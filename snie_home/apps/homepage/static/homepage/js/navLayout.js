@@ -13,7 +13,7 @@ function updateIframe(src) {
         var frameBody = IFrame.contentDocument.body;
         IFrame.style.width = window.innerWidth;
         IFrame.style.height = frameBody.scrollHeight;
-        //IFrame.style['margin-left'] =  window.innerWidth / 5;
+        IFrame.style['margin-left'] =  window.innerWidth / 5;
         IFrame.style.display = 'block';
     }
 }
@@ -54,6 +54,8 @@ function transitToNav(node) {
           .attr("transform", function(d, i) { return "translate(" +  (window.innerWidth / 5 + i * circleSize * 2.2) + "," + circleSize + ")"; })
           .each('end', function() {
             count++;
+
+            // After all transition is finished
             if (count === len) {
                 toTransit.on('click', null);
 
@@ -78,32 +80,30 @@ function transitToNav(node) {
                   .duration(duration)
                   .attr('opacity', 1)
                   .each('end', function() {
-                    d3.select('svg').transition()
-                      .duration(200)
+                    d3.select('svg')
                       .attr('height', circleSize * 3)
-                      .each('end', function() {
-                        updateIframe(node.src);
+                      
+                    updateIframe(node.src);
 
-                        toTransit.on('click', function(d) {
-                          d3.selectAll('g.node')
-                            .filter(function(data) {
-                              if (data !== d) return true;
-                            })
-                            .select('circle')
-                            .style('fill', 'white');
-
-                          d3.selectAll('g.node')
-                            .filter(function(data) {
-                              if (data === d) return true;
-                            })
-                            .select('circle')
-                            .style('fill', 'pink');
-
-                          updateIframe(d.src);
+                    toTransit.on('click', function(d) {
+                      d3.selectAll('g.node')
+                        .filter(function(data) {
+                          if (data !== d) return true;
                         })
-                      })
-                  });
-            }
+                        .select('circle')
+                        .style('fill', 'white');
+
+                      d3.selectAll('g.node')
+                        .filter(function(data) {
+                          if (data === d) return true;
+                        })
+                        .select('circle')
+                        .style('fill', 'pink');
+
+                      updateIframe(d.src);
+                    })
+                });
+              }
           });
       }
     });

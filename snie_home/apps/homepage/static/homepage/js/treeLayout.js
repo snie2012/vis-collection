@@ -15,7 +15,7 @@ var tree;
 var diagonal;
 
 function init() {
-    datapath = '/en/homepage/json/';
+    datapath = "data/snie.json";
     colorPallete = ['#ff6666', '#6677ff', '#339933', '#999966'];
 
     margin = {top: 20, right: 120, bottom: 20, left: 60};
@@ -75,13 +75,59 @@ function collapse(d) {
   }
 }
 
+
+/* Position the root node when the page is loaded at the beginning
+*/
+function initialDisplay() {
+  var node = canvas.selectAll("g.node")
+      .data(tree.nodes(root));
+
+  var rootEnter = node.enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + width / 2 + "," + height / 2.4 + ")"; })
+      .on('click', function() {
+        update(root);
+        setTimeout(function(){
+          click(root);
+          rootEnter.on('click', click);
+        }, duration * 1.1);
+      });
+
+  rootEnter.append("circle")
+      .attr("r", 0)
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  rootEnter.append("text")
+      .attr("dy", ".35em")
+      .attr("text-anchor", "middle")
+      .text(function(d) { return d.name; })
+      .style("fill-opacity", 0)
+      .style('font-size', '1em');
+
+  var rootUpdate = node.transition()
+      .duration(duration)
+      .attr("transform", function(d) { return "translate(" + width / 2 + "," + height / 2.4 + ")"; });
+
+  rootUpdate.select("circle")
+      .attr("r", circleSize * 2)
+      .style("stroke", function(d) {return d.color;})
+      .style("fill","lightsteelblue");
+
+  rootUpdate.select("text")
+      .style("fill-opacity", 1);
+}
+
+
+/*
+Called in the click functin. Every time a click evernt happens, update is called once.
+*/
 function update(source) {
   // Compute the new tree layout.
   var nodes = tree.nodes(root),
       links = tree.links(nodes);
 
   // Normalize for fixed-depth.
-  nodes.forEach(function(d) { d.y = d.depth * 240;});
+  nodes.forEach(function(d) { d.y = (d.depth + 1) * width / 5;});
 
   // Update the nodes…
   var node = canvas.selectAll("g.node")
@@ -94,14 +140,11 @@ function update(source) {
       .on("click", click);
 
   nodeEnter.append("circle")
-      .attr("r", 0)
-      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+      .attr("r", 0);
 
   nodeEnter.append("text")
-      //.attr("x", function(d) { return d.children || d._children ? 30 : 30; })
       .attr("dy", ".35em")
       .attr("text-anchor", "middle")
-      //.attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
       .text(function(d) { return d.name; })
       .style("fill-opacity", 0);
 
@@ -113,7 +156,10 @@ function update(source) {
   nodeUpdate.select("circle")
       .attr("r", circleSize)
       .style("stroke", function(d) {return d.color;})
-      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+      .style('stroke-width', function(d) {
+        return (d.children || d._children) ? 5 : 0;
+      })
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : d.children ? "#fff" : "#fff";});
 
   nodeUpdate.select("text")
       .style("fill-opacity", 1);
@@ -192,6 +238,7 @@ function click(d) {
   }
 }
  
+
 init();
 d3.json(datapath, function(error, d) {    
     if (error) throw error;
@@ -204,7 +251,7 @@ d3.json(datapath, function(error, d) {
     root.y0 = 0;
 
     collapse(root);
-    update(root);
+    initialDisplay();
 });
 
 
