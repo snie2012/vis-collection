@@ -152,7 +152,7 @@ USE_TZ = True
 
 
 # Configure static file directory
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = 'static'
 
 # Look for static files in a folder named static inside each of the apps
 STATIC_URL = '/static/'
