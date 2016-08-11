@@ -11,9 +11,10 @@ function updateIframe(src) {
     IFrame.src = src;
     IFrame.onload = function() {
         var frameBody = IFrame.contentDocument.body;
-        IFrame.style.width = window.innerWidth;
-        IFrame.style.height = frameBody.scrollHeight;
-        IFrame.style['margin-left'] =  window.innerWidth / 5;
+        IFrame.style['margin-left'] =  20;
+        IFrame.style['margin-right'] =  20;
+        IFrame.style.width = window.innerWidth - 50;
+        IFrame.style.height = Math.max(frameBody.scrollHeight, window.innerHeight);
         IFrame.style.display = 'block';
     }
 }

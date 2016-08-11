@@ -216,8 +216,8 @@ function draw(canvas, root) {
 
 function init() {
     canvasSize = {
-    'width': window.innerWidth,
-    'height': window.innerHeight
+        'width': 1000,
+        'height': 1000
     };
 
     svgGroup = d3.select('#svg')
