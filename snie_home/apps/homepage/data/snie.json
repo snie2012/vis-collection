@@ -9,7 +9,13 @@
 			"name": "projects",
 			"children": [
 				{
-					"name": "vis leetcode"
+					"name": "vis leetcode",
+					"children": [
+						{
+							"name": "perfect squares",
+							"src": "perfect_squares"
+						}
+					]
 				},
 
 				{
@@ -23,18 +29,18 @@
 			"children": [
 				{
 					"name": "镜中",
-					"src": "jing-zhong.html"
+					"src": "poetry/jing_zhong"
 				},
 
 				{
 					"name": "当你老了",
-					"src": "when-you-are-old.html"
+					"src": "poetry/when_you_are_old"
 
 				},
 
 				{
 					"name": "亚当的诅咒",
-					"src": "the-curse-of-adam.html"
+					"src": "poetry/the_curse_of_adam"
 				}
 			]
 		},

@@ -1,31 +1,20 @@
 from django.conf.urls import url
 from django.shortcuts import render
+from django.conf.urls import url, include
 from . import views
-
-import os
-import json
+from . import sections
+from . import data
 
 urlpatterns = [
     url(r'^$', views.homepage, name='homepage'),
-    url(r'^json/$', views.jsonFile, name='jsonFile'),
 ]
 
-dataPath = os.path.join(os.path.dirname(__file__), 'static/homepage/data/snie.json')
-subpages = {}
+urlpatterns += [
+    url(r'^snie_json/$', data.serve_file, name='file')
+]
 
-def constructRender(link):
-    def requestHandler(request):
-        return render(request, link)
-    return requestHandler
-
-def build(node):
-    #url += [url(r'^(?P<string>[\w\-]+)$', views.jsonFile, name='jsonFile')]
-    if 'src' in node:
-        subpages[node['name']] = constructRender('homepage/subpages/' + node['src'])
-    if 'children' in node:
-        for c in node['children']:
-            build(c)
-
-with open(dataPath, 'r', encoding='utf-8') as f:
-    root = json.load(f, encoding='utf-8')
-    build(root)
+urlpatterns += [
+    url(r'^poetry/', include('snie_home.apps.homepage.sections.poetry.urls', namespace="poetry")),
+    url(r'^projects/', include('snie_home.apps.homepage.sections.projects.urls', namespace="projects")),
+    url(r'^writings/', include('snie_home.apps.homepage.sections.writings.urls', namespace="writings"))
+]

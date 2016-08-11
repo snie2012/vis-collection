@@ -1,7 +1,7 @@
 var canvas;
 var root;
 
-var datapath;
+var dataSrc;
 var colorPallete;
 
 var margin;
@@ -15,7 +15,7 @@ var tree;
 var diagonal;
 
 function init() {
-    datapath = "/en/homepage/json/";
+    dataSrc = "snie_json";
     colorPallete = ['#ff6666', '#6677ff', '#339933', '#999966'];
 
     margin = {top: 20, right: 120, bottom: 20, left: 60};
@@ -240,7 +240,7 @@ function click(d) {
  
 
 init();
-d3.json(datapath, function(error, d) {    
+d3.json(dataSrc, function(error, d) {    
     if (error) throw error;
 
     setCanvas();

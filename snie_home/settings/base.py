@@ -105,7 +105,10 @@ LOGIN_REDIRECT_URL = "/"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        'DIRS': [
+            os.path.join(BASE_DIR, "templates"),
+            os.path.join(BASE_DIR, "apps/homepage/sections/poetry/poems")
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -161,6 +164,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     # Path to shared js and css libs
-    # os.path.join(BASE_DIR, 'common/common/js'),
-    # os.path.join(BASE_DIR, 'common/common/css')
+    os.path.join(BASE_DIR, 'common_static/js'),
+    os.path.join(BASE_DIR, 'common_static/css')
 )
