@@ -107,7 +107,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, "templates"),
-            os.path.join(BASE_DIR, "apps/homepage/sections/poetry/poems")
+            os.path.join(BASE_DIR, "apps/homepage/sections/poetry/poems"),
+            os.path.join(BASE_DIR, "apps/homepage/sections/projects/projects_pages")
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -165,5 +166,4 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     # Path to shared js and css libs
     os.path.join(BASE_DIR, 'common_static/js'),
-    os.path.join(BASE_DIR, 'common_static/css')
 )
