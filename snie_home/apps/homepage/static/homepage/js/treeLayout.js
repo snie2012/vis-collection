@@ -15,7 +15,7 @@ var tree;
 var diagonal;
 
 function init() {
-    datapath = "'/en/homepage/json/'";
+    datapath = "/en/homepage/json/";
     colorPallete = ['#ff6666', '#6677ff', '#339933', '#999966'];
 
     margin = {top: 20, right: 120, bottom: 20, left: 60};
