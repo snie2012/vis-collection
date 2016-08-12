@@ -11,9 +11,9 @@ function updateIframe(src) {
     IFrame.src = src;
     IFrame.onload = function() {
         var frameBody = IFrame.contentDocument.body;
-        IFrame.style['margin-left'] =  20;
-        IFrame.style['margin-right'] =  20;
-        IFrame.style.width = window.innerWidth - 50;
+        IFrame.style.margin =  20;
+        //IFrame.style['margin-right'] =  20;
+        IFrame.style.width = window.innerWidth / 1.2;
         IFrame.style.height = Math.max(frameBody.scrollHeight, window.innerHeight);
         IFrame.style.display = 'block';
     }
@@ -83,6 +83,8 @@ function transitToNav(node) {
                   .each('end', function() {
                     d3.select('svg')
                       .attr('height', circleSize * 3)
+                      .style('background-color', 'purple')
+                      .style('border-radius', '1em');
                       
                     updateIframe(node.src);
 
