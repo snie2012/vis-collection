@@ -18,7 +18,7 @@ function init() {
     dataSrc = "snie_json";
     colorPallete = ['#ff6666', '#6677ff', '#339933', '#999966'];
 
-    margin = {top: 20, right: 120, bottom: 20, left: 60};
+    margin = {top: 20, right: 60, bottom: 20, left: 60};
     width = window.innerWidth - margin.right - margin.left;
     height = window.innerHeight - margin.top - margin.bottom;
 
@@ -37,8 +37,8 @@ function init() {
 
 function setCanvas() {
     canvas = d3.select("svg")
-        .attr("width", width + margin.right + margin.left)
-        .attr("height", height + margin.top + margin.bottom)
+        .attr("width", width)
+        .attr("height", height)
       .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");   
 }

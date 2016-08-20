@@ -1,4 +1,5 @@
 function backToTreeLayout() {
+  d3.select('svg').style('background-color', '')
   d3.select('iframe').style('display', 'none');
   canvas.remove();
   setCanvas();
@@ -11,10 +12,12 @@ function updateIframe(src) {
     IFrame.src = src;
     IFrame.onload = function() {
         var frameBody = IFrame.contentDocument.body;
-        IFrame.style.margin =  20;
+        IFrame.style['margin-left'] =  margin.left;
         //IFrame.style['margin-right'] =  20;
         IFrame.style.width = window.innerWidth / 1.2;
         IFrame.style.height = Math.max(frameBody.scrollHeight, window.innerHeight);
+        IFrame.style['background-color'] = 'blueviolet';
+        IFrame.style['border-radius'] = '36px';
         IFrame.style.display = 'block';
     }
 }
@@ -82,26 +85,31 @@ function transitToNav(node) {
                   .attr('opacity', 1)
                   .each('end', function() {
                     d3.select('svg')
-                      .attr('height', circleSize * 3)
-                      .style('background-color', 'purple')
-                      .style('border-radius', '1em');
+                      .attr('height', circleSize * 3);
                       
                     updateIframe(node.src);
 
                     toTransit.on('click', function(d) {
+
+                      // if click on the activated tab, do nothing and return
+                      if (d3.select(this).select('circle').style('fill') == 'rgb(255, 192, 203)') {
+                        return;
+                      }
+
+
                       d3.selectAll('g.node')
                         .filter(function(data) {
                           if (data !== d) return true;
                         })
                         .select('circle')
-                        .style('fill', 'white');
+                        .style('fill', 'rgb(256, 256, 256)');
 
                       d3.selectAll('g.node')
                         .filter(function(data) {
                           if (data === d) return true;
                         })
                         .select('circle')
-                        .style('fill', 'pink');
+                        .style('fill', 'rgb(255, 192, 203)');
 
                       updateIframe(d.src);
                     })
