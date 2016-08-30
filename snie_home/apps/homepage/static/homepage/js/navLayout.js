@@ -1,3 +1,4 @@
+// return to tree layout from nav layout
 function backToTreeLayout() {
   d3.select('svg').style('background-color', '')
   d3.select('iframe').style('display', 'none');
@@ -6,6 +7,7 @@ function backToTreeLayout() {
   update(root);
 }
 
+// called when the iframe is rendered for the first time
 function updateIframe(src) {
     var IFrame = document.getElementsByTagName('iframe')[0];
     
@@ -16,13 +18,14 @@ function updateIframe(src) {
         //IFrame.style['margin-right'] =  20;
         IFrame.style.width = window.innerWidth / 1.2;
         IFrame.style.height = Math.max(frameBody.scrollHeight, window.innerHeight);
-        IFrame.style['background-color'] = 'blueviolet';
+        IFrame.style['background-color'] = 'yellowgreen';
         IFrame.style['border-radius'] = '36px';
         IFrame.style.display = 'block';
     }
 }
 
 
+// transition to nav layout from tree layout
 function transitToNav(node) {
   var selectedNode = canvas.selectAll('g.node')
     .filter(function(d) {
