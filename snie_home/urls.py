@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.i18n import i18n_patterns
-from .views import home, home_files
+from .views import home, home_files, tmpRedirect
 
 urlpatterns = [
     url(r'^(?P<filename>(robots.txt)|(humans.txt))$', 
@@ -32,6 +32,6 @@ urlpatterns += i18n_patterns(url(r'^admin/', include(admin.site.urls)));
 
 # for custom pages
 urlpatterns += i18n_patterns(
-    url(r'^$', home, name='home'),
+    url(r'^$', tmpRedirect, name='home'),
     url(r'^homepage/', include('snie_home.apps.homepage.urls', namespace="homepage"))
 )
