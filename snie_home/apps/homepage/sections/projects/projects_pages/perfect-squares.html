@@ -4,16 +4,20 @@
     <link rel="stylesheet" type="text/css" href="{% static 'perfect_squares/css/main.css'%}">
 </head>
 <body>
-    <div>
+    <div id='doc'>
         <p>This is a visualization intended to illustrate a BFS solution of the perfect square problem on Leetcode. Following is the link to the problem and the BFS solution.</p>
-        <a href="https://leetcode.com/problems/perfect-squares/">Perfect Squares Problem</a>
+        <a href="https://leetcode.com/problems/perfect-squares/" target="_blank">Perfect Squares Problem</a>
         <br>
-        <a href="https://discuss.leetcode.com/topic/24255/summary-of-4-different-solutions-bfs-dp-static-dp-and-mathematics">BFS Solution</a>
+        <a href="https://discuss.leetcode.com/topic/24255/summary-of-4-different-solutions-bfs-dp-static-dp-and-mathematics" target="_blank">BFS Solution</a>
     </div>
 
+    <br>
 
-    <input id='inputValue' type="text" placeholder="input number" onchange="start(this.value)">
-    <svg id='svg'></svg>
+    <div id="vis">
+        <input id='inputValue' type="text" placeholder="input number" onchange="start(this.value)">
+        <svg id='svg'></svg>
+    </div>
+
     <div id="tooltip" class="hidden">
         <p><span id="tooltip-text"></span></p>
     </div>

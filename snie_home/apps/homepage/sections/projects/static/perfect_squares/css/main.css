@@ -2,6 +2,25 @@ body {
     background: white;
 }
 
+#doc {
+    text-align: center;
+}
+
+#vis {
+    border: solid;
+    border-width: 0.5;
+    border-radius: 15px;
+}
+
+#svg {
+    overflow: visible;
+    width: 1200px;
+    height: 1000px;
+
+    margin-left: 10;
+}
+
+
 #inputValue {
     margin: 15px;
     margin-top: 20px;
@@ -10,6 +29,7 @@ body {
 
 #tooltip {
     position: absolute;
+    display: none;
     padding: 10px;
     background-color: lightblue;
     -webkit-border-radius: 10px;

@@ -191,6 +191,7 @@ function draw(canvas, root) {
             .attr('x', node.cx - node.r / 3)
             .attr('y', node.cy + node.r / 3)
             .text(node.value.toString())
+            .attr('text-anchor', "middle")
             .attr('font-size', 8)
             .on('mouseover', function(){
                mouseOver(node);
@@ -216,14 +217,11 @@ function draw(canvas, root) {
 
 function init() {
     canvasSize = {
-        'width': 1000,
-        'height': 1000
+        'width': window.innerWidth - 35,
+        'height': window.innerHeight
     };
 
-    svgGroup = d3.select('#svg')
-                    .attr('width', canvasSize.width)
-                    .attr('height', canvasSize.height)
-                    .append('g');
+    svgGroup = d3.select('#svg').append('g');
 }
 
 function start(value) {
@@ -234,7 +232,7 @@ function start(value) {
 
     var nodeList = [];
     nodeList.push(treeRoot);
-    layout(nodeList, canvasSize.width, 80);
+    layout(nodeList, canvasSize.width, 120);
 
     if (svgGroup) {
         svgGroup.remove();
