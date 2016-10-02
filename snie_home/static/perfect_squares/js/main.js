@@ -232,7 +232,7 @@ function start(value) {
 
     var nodeList = [];
     nodeList.push(treeRoot);
-    layout(nodeList, canvasSize.width, 80);
+    layout(nodeList, canvasSize.width, 120);
 
     if (svgGroup) {
         svgGroup.remove();
