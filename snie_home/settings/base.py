@@ -121,7 +121,6 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 # Required by allauth template tags
-                "django.core.context_processors.request",
 
                 # allauth specific context processors
                 # Why comment out the following settings: http://stackoverflow.com/questions/31648019/no-module-named-allauth-account-context-processors
