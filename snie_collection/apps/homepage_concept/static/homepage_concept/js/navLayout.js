@@ -18,7 +18,7 @@ function updateIframe(src) {
         //IFrame.style['margin-right'] =  20;
         IFrame.style.width = window.innerWidth / 1.2;
         IFrame.style.height = Math.max(frameBody.scrollHeight, window.innerHeight);
-        IFrame.style['background-color'] = 'yellowgreen';
+        IFrame.style['background-color'] = 'darkseagreen';
         IFrame.style['border-radius'] = '36px';
         IFrame.style.display = 'block';
     }

@@ -2,7 +2,8 @@
 	"name": "snie",
 	"children": [
 		{
-			"name": "home"
+			"name": "home",
+			"src": "sample"
 		},
 
 		{
@@ -13,13 +14,14 @@
 					"children": [
 						{
 							"name": "perfect squares",
-							"src": "projects/perfect_squares"
+							"src": "sample"
 						}
 					]
 				},
 
 				{
-					"name": "vis deepnet"
+					"name": "vis deepnet",
+					"src": "sample"
 				}
 			]
 		},
@@ -29,18 +31,18 @@
 			"children": [
 				{
 					"name": "镜中",
-					"src": "poetry/jing_zhong"
+					"src": "jing_zhong"
 				},
 
 				{
 					"name": "当你老了",
-					"src": "poetry/when_you_are_old"
+					"src": "when_you_are_old"
 
 				},
 
 				{
 					"name": "亚当的诅咒",
-					"src": "poetry/the_curse_of_adam"
+					"src": "the_curse_of_adam"
 				}
 			]
 		},
@@ -49,35 +51,43 @@
 			"name": "writing",
 			"children": [
 				{
-					"name": "language"
+					"name": "article1",
+					"src": "sample"
 				},
 
 				{
-					"name": "thoughts"
+					"name": "article2",
+					"src": "sample"
 				},
 
 				{
-					"name": "language"
+					"name": "article3",
+					"src": "sample"
 				},
 
 				{
-					"name": "thoughts"
+					"name": "article4",
+					"src": "sample"
 				},
 
 				{
-					"name": "language"
+					"name": "article5",
+					"src": "sample"
 				},
 
 				{
-					"name": "thoughts"
+					"name": "article6",
+					"src": "sample"
 				},
 
 				{
-					"name": "language"
+					"name": "article7",
+					"src": "sample"
 				},
 
 				{
-					"name": "thoughts"
+					"name": "article8",
+					"src": "sample"
 				}
 			]
 		}
