@@ -166,5 +166,4 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     # Path to shared js and css libs
     os.path.join(BASE_DIR, 'common_static'),
-    os.path.join(BASE_DIR, 'apps/homepage/sections/projects/static'),
 )
