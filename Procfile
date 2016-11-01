@@ -1,1 +1,1 @@
-web: gunicorn snie_home.wsgi --log-file -
+web: gunicorn snie_collection.wsgi --log-file -
