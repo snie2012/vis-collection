@@ -1,5 +1,5 @@
 from .base import *
 
-ALLOWED_HOSTS = ['snie-collection.herokuapp.com']
+ALLOWED_HOSTS = ['https://snie.herokuapp.com']
 
 DEBUG = False
