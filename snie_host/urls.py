@@ -32,6 +32,6 @@ urlpatterns += i18n_patterns(url(r'^admin/', include(admin.site.urls)));
 
 # for custom pages
 urlpatterns += i18n_patterns(
-    url(r'^homepage_concept/', include('snie_collection.apps.homepage_concept.urls', namespace="homepage_concept")),
-    url(r'^visualizing_leetcode/', include('snie_collection.apps.visualizing_leetcode.urls', namespace="visualizing_leetcode"))
+    url(r'^homepage_concept/', include('snie_host.apps.homepage_concept.urls', namespace="homepage_concept")),
+    url(r'^visualizing_leetcode/', include('snie_host.apps.visualizing_leetcode.urls', namespace="visualizing_leetcode"))
 )

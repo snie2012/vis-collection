@@ -1,4 +1,4 @@
-export DJANGO_SETTINGS_MODULE="snie_collection.settings.development"
+export DJANGO_SETTINGS_MODULE="snie_host.settings.development"
 
 export DATABASE_URL="postgres://django:django@172.17.0.2/django_db"
 

@@ -19,11 +19,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = False
 
 # Setup web server
-WSGI_APPLICATION = 'snie_collection.wsgi.application'
+WSGI_APPLICATION = 'snie_host.wsgi.application'
 
 # Configure the root url. All url settings is starting from this path.
 # Notice: the path is relative to the directory where manage.py is. Because the path of the setting is set up when the virtual env is activated
-ROOT_URLCONF = 'snie_collection.urls'
+ROOT_URLCONF = 'snie_host.urls'
 
 
 # Application definition
@@ -54,8 +54,8 @@ INSTALLED_APPS += (
 # User defined apps
 INSTALLED_APPS += (
     # Installed apps
-    'snie_collection.apps.homepage_concept',
-    'snie_collection.apps.visualizing_leetcode',
+    'snie_host.apps.homepage_concept',
+    'snie_host.apps.visualizing_leetcode',
 )
 
 
